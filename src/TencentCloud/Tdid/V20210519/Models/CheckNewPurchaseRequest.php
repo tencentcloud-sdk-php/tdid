@@ -18,20 +18,16 @@ namespace TencentCloud\Tdid\V20210519\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * GetDidDocument请求参数结构体
+ * CheckNewPurchase请求参数结构体
  *
- * @method string getDid() 获取tdid
- * @method void setDid(string $Did) 设置tdid
+
  */
-class GetDidDocumentRequest extends AbstractModel
+class CheckNewPurchaseRequest extends AbstractModel
 {
-    /**
-     * @var string tdid
-     */
-    public $Did;
+
 
     /**
-     * @param string $Did tdid
+
      */
     function __construct()
     {
@@ -46,8 +42,6 @@ class GetDidDocumentRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Did",$param) and $param["Did"] !== null) {
-            $this->Did = $param["Did"];
-        }
+
     }
 }

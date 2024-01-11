@@ -18,19 +18,33 @@ namespace TencentCloud\Tdid\V20210519\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateSelectiveCredential返回参数结构体
+ * VerifyCredentials返回参数结构体
  *
- * @method string getCredentialData() 获取凭证字符串
- * @method void setCredentialData(string $CredentialData) 设置凭证字符串
+ * @method boolean getResult() 获取是否验证成功
+ * @method void setResult(boolean $Result) 设置是否验证成功
+ * @method integer getVerifyCode() 获取验证返回码
+ * @method void setVerifyCode(integer $VerifyCode) 设置验证返回码
+ * @method string getVerifyMessage() 获取验证结果信息
+ * @method void setVerifyMessage(string $VerifyMessage) 设置验证结果信息
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class CreateSelectiveCredentialResponse extends AbstractModel
+class VerifyCredentialsResponse extends AbstractModel
 {
     /**
-     * @var string 凭证字符串
+     * @var boolean 是否验证成功
      */
-    public $CredentialData;
+    public $Result;
+
+    /**
+     * @var integer 验证返回码
+     */
+    public $VerifyCode;
+
+    /**
+     * @var string 验证结果信息
+     */
+    public $VerifyMessage;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -38,7 +52,9 @@ class CreateSelectiveCredentialResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param string $CredentialData 凭证字符串
+     * @param boolean $Result 是否验证成功
+     * @param integer $VerifyCode 验证返回码
+     * @param string $VerifyMessage 验证结果信息
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -54,8 +70,16 @@ class CreateSelectiveCredentialResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("CredentialData",$param) and $param["CredentialData"] !== null) {
-            $this->CredentialData = $param["CredentialData"];
+        if (array_key_exists("Result",$param) and $param["Result"] !== null) {
+            $this->Result = $param["Result"];
+        }
+
+        if (array_key_exists("VerifyCode",$param) and $param["VerifyCode"] !== null) {
+            $this->VerifyCode = $param["VerifyCode"];
+        }
+
+        if (array_key_exists("VerifyMessage",$param) and $param["VerifyMessage"] !== null) {
+            $this->VerifyMessage = $param["VerifyMessage"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

@@ -18,19 +18,19 @@ namespace TencentCloud\Tdid\V20210519\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateTDidByPrivateKey返回参数结构体
+ * GetTDidDocument返回参数结构体
  *
- * @method string getDid() 获取did的具体信息
- * @method void setDid(string $Did) 设置did的具体信息
+ * @method string getDocument() 获取DID文档内容
+ * @method void setDocument(string $Document) 设置DID文档内容
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class CreateTDidByPrivateKeyResponse extends AbstractModel
+class GetTDidDocumentResponse extends AbstractModel
 {
     /**
-     * @var string did的具体信息
+     * @var string DID文档内容
      */
-    public $Did;
+    public $Document;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -38,7 +38,7 @@ class CreateTDidByPrivateKeyResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param string $Did did的具体信息
+     * @param string $Document DID文档内容
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -54,8 +54,8 @@ class CreateTDidByPrivateKeyResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Did",$param) and $param["Did"] !== null) {
-            $this->Did = $param["Did"];
+        if (array_key_exists("Document",$param) and $param["Document"] !== null) {
+            $this->Document = $param["Document"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

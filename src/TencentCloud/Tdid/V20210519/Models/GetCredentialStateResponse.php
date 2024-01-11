@@ -18,26 +18,22 @@ namespace TencentCloud\Tdid\V20210519\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * RegisterCpt返回参数结构体
+ * GetCredentialState返回参数结构体
  *
- * @method integer getId() 获取凭证模板索引
- * @method void setId(integer $Id) 设置凭证模板索引
- * @method integer getCptId() 获取凭证模板id
- * @method void setCptId(integer $CptId) 设置凭证模板id
+ * @method CredentialState getCredentialState() 获取凭证状态信息
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setCredentialState(CredentialState $CredentialState) 设置凭证状态信息
+注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class RegisterCptResponse extends AbstractModel
+class GetCredentialStateResponse extends AbstractModel
 {
     /**
-     * @var integer 凭证模板索引
+     * @var CredentialState 凭证状态信息
+注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Id;
-
-    /**
-     * @var integer 凭证模板id
-     */
-    public $CptId;
+    public $CredentialState;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -45,8 +41,8 @@ class RegisterCptResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param integer $Id 凭证模板索引
-     * @param integer $CptId 凭证模板id
+     * @param CredentialState $CredentialState 凭证状态信息
+注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -62,12 +58,9 @@ class RegisterCptResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Id",$param) and $param["Id"] !== null) {
-            $this->Id = $param["Id"];
-        }
-
-        if (array_key_exists("CptId",$param) and $param["CptId"] !== null) {
-            $this->CptId = $param["CptId"];
+        if (array_key_exists("CredentialState",$param) and $param["CredentialState"] !== null) {
+            $this->CredentialState = new CredentialState();
+            $this->CredentialState->deserialize($param["CredentialState"]);
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

@@ -18,20 +18,28 @@ namespace TencentCloud\Tdid\V20210519\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * SetCredentialStatus请求参数结构体
+ * GetTDidDocument请求参数结构体
  *
- * @method CredentialStatus getCredentialStatus() 获取凭证状态
- * @method void setCredentialStatus(CredentialStatus $CredentialStatus) 设置凭证状态
+ * @method string getDid() 获取DID标识
+ * @method void setDid(string $Did) 设置DID标识
+ * @method integer getDAPId() 获取DID应用ID
+ * @method void setDAPId(integer $DAPId) 设置DID应用ID
  */
-class SetCredentialStatusRequest extends AbstractModel
+class GetTDidDocumentRequest extends AbstractModel
 {
     /**
-     * @var CredentialStatus 凭证状态
+     * @var string DID标识
      */
-    public $CredentialStatus;
+    public $Did;
 
     /**
-     * @param CredentialStatus $CredentialStatus 凭证状态
+     * @var integer DID应用ID
+     */
+    public $DAPId;
+
+    /**
+     * @param string $Did DID标识
+     * @param integer $DAPId DID应用ID
      */
     function __construct()
     {
@@ -46,9 +54,12 @@ class SetCredentialStatusRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("CredentialStatus",$param) and $param["CredentialStatus"] !== null) {
-            $this->CredentialStatus = new CredentialStatus();
-            $this->CredentialStatus->deserialize($param["CredentialStatus"]);
+        if (array_key_exists("Did",$param) and $param["Did"] !== null) {
+            $this->Did = $param["Did"];
+        }
+
+        if (array_key_exists("DAPId",$param) and $param["DAPId"] !== null) {
+            $this->DAPId = $param["DAPId"];
         }
     }
 }

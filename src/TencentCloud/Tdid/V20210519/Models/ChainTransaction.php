@@ -18,20 +18,20 @@ namespace TencentCloud\Tdid\V20210519\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 创建凭证第二个
+ * 链上交易信息
  *
- * @method string getInvokerTDid() 获取凭证did
- * @method void setInvokerTDid(string $InvokerTDid) 设置凭证did
+ * @method string getTransactionHash() 获取交易哈希
+ * @method void setTransactionHash(string $TransactionHash) 设置交易哈希
  */
-class TransactionArg extends AbstractModel
+class ChainTransaction extends AbstractModel
 {
     /**
-     * @var string 凭证did
+     * @var string 交易哈希
      */
-    public $InvokerTDid;
+    public $TransactionHash;
 
     /**
-     * @param string $InvokerTDid 凭证did
+     * @param string $TransactionHash 交易哈希
      */
     function __construct()
     {
@@ -46,8 +46,8 @@ class TransactionArg extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("InvokerTDid",$param) and $param["InvokerTDid"] !== null) {
-            $this->InvokerTDid = $param["InvokerTDid"];
+        if (array_key_exists("TransactionHash",$param) and $param["TransactionHash"] !== null) {
+            $this->TransactionHash = $param["TransactionHash"];
         }
     }
 }

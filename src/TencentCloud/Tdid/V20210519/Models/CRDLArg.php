@@ -18,23 +18,27 @@ namespace TencentCloud\Tdid\V20210519\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 创建凭证入参的FunctionArg
+ * 颁发凭证的数据参数
  *
- * @method integer getCptId() 获取CPT ID
- * @method void setCptId(integer $CptId) 设置CPT ID
+ * @method integer getCPTId() 获取CPT ID
+ * @method void setCPTId(integer $CPTId) 设置CPT ID
  * @method string getIssuer() 获取签发者 did
  * @method void setIssuer(string $Issuer) 设置签发者 did
  * @method string getExpirationDate() 获取过期时间
  * @method void setExpirationDate(string $ExpirationDate) 设置过期时间
  * @method string getClaimJson() 获取声明
  * @method void setClaimJson(string $ClaimJson) 设置声明
+ * @method array getType() 获取凭证类型
+ * @method void setType(array $Type) 设置凭证类型
+ * @method array getParties() 获取多方签名的用户did
+ * @method void setParties(array $Parties) 设置多方签名的用户did
  */
-class FunctionArg extends AbstractModel
+class CRDLArg extends AbstractModel
 {
     /**
      * @var integer CPT ID
      */
-    public $CptId;
+    public $CPTId;
 
     /**
      * @var string 签发者 did
@@ -52,10 +56,22 @@ class FunctionArg extends AbstractModel
     public $ClaimJson;
 
     /**
-     * @param integer $CptId CPT ID
+     * @var array 凭证类型
+     */
+    public $Type;
+
+    /**
+     * @var array 多方签名的用户did
+     */
+    public $Parties;
+
+    /**
+     * @param integer $CPTId CPT ID
      * @param string $Issuer 签发者 did
      * @param string $ExpirationDate 过期时间
      * @param string $ClaimJson 声明
+     * @param array $Type 凭证类型
+     * @param array $Parties 多方签名的用户did
      */
     function __construct()
     {
@@ -70,8 +86,8 @@ class FunctionArg extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("CptId",$param) and $param["CptId"] !== null) {
-            $this->CptId = $param["CptId"];
+        if (array_key_exists("CPTId",$param) and $param["CPTId"] !== null) {
+            $this->CPTId = $param["CPTId"];
         }
 
         if (array_key_exists("Issuer",$param) and $param["Issuer"] !== null) {
@@ -84,6 +100,14 @@ class FunctionArg extends AbstractModel
 
         if (array_key_exists("ClaimJson",$param) and $param["ClaimJson"] !== null) {
             $this->ClaimJson = $param["ClaimJson"];
+        }
+
+        if (array_key_exists("Type",$param) and $param["Type"] !== null) {
+            $this->Type = $param["Type"];
+        }
+
+        if (array_key_exists("Parties",$param) and $param["Parties"] !== null) {
+            $this->Parties = $param["Parties"];
         }
     }
 }

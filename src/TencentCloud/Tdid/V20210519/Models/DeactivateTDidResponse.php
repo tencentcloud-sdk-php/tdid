@@ -18,19 +18,19 @@ namespace TencentCloud\Tdid\V20210519\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateTDid返回参数结构体
+ * DeactivateTDid返回参数结构体
  *
- * @method string getDid() 获取TDID
- * @method void setDid(string $Did) 设置TDID
+ * @method ChainTransaction getTransaction() 获取上链交易信息
+ * @method void setTransaction(ChainTransaction $Transaction) 设置上链交易信息
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class CreateTDidResponse extends AbstractModel
+class DeactivateTDidResponse extends AbstractModel
 {
     /**
-     * @var string TDID
+     * @var ChainTransaction 上链交易信息
      */
-    public $Did;
+    public $Transaction;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -38,7 +38,7 @@ class CreateTDidResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param string $Did TDID
+     * @param ChainTransaction $Transaction 上链交易信息
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -54,8 +54,9 @@ class CreateTDidResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Did",$param) and $param["Did"] !== null) {
-            $this->Did = $param["Did"];
+        if (array_key_exists("Transaction",$param) and $param["Transaction"] !== null) {
+            $this->Transaction = new ChainTransaction();
+            $this->Transaction->deserialize($param["Transaction"]);
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

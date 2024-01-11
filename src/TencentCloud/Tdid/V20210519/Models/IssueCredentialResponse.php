@@ -18,19 +18,27 @@ namespace TencentCloud\Tdid\V20210519\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * SetCredentialStatus返回参数结构体
+ * IssueCredential返回参数结构体
  *
+ * @method string getCredentialData() 获取可验证凭证内容
+ * @method void setCredentialData(string $CredentialData) 设置可验证凭证内容
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class SetCredentialStatusResponse extends AbstractModel
+class IssueCredentialResponse extends AbstractModel
 {
+    /**
+     * @var string 可验证凭证内容
+     */
+    public $CredentialData;
+
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     public $RequestId;
 
     /**
+     * @param string $CredentialData 可验证凭证内容
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -46,6 +54,10 @@ class SetCredentialStatusResponse extends AbstractModel
         if ($param === null) {
             return;
         }
+        if (array_key_exists("CredentialData",$param) and $param["CredentialData"] !== null) {
+            $this->CredentialData = $param["CredentialData"];
+        }
+
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
             $this->RequestId = $param["RequestId"];
         }

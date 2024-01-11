@@ -18,19 +18,26 @@ namespace TencentCloud\Tdid\V20210519\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * GetCredentialStatus返回参数结构体
+ * CreateTDidByPubKey返回参数结构体
  *
- * @method CredentialStatus getCredentialStatus() 获取凭证状态信息
- * @method void setCredentialStatus(CredentialStatus $CredentialStatus) 设置凭证状态信息
+ * @method string getDid() 获取did标识
+ * @method void setDid(string $Did) 设置did标识
+ * @method ChainTransaction getTransaction() 获取链上交易信息
+ * @method void setTransaction(ChainTransaction $Transaction) 设置链上交易信息
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class GetCredentialStatusResponse extends AbstractModel
+class CreateTDidByPubKeyResponse extends AbstractModel
 {
     /**
-     * @var CredentialStatus 凭证状态信息
+     * @var string did标识
      */
-    public $CredentialStatus;
+    public $Did;
+
+    /**
+     * @var ChainTransaction 链上交易信息
+     */
+    public $Transaction;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -38,7 +45,8 @@ class GetCredentialStatusResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param CredentialStatus $CredentialStatus 凭证状态信息
+     * @param string $Did did标识
+     * @param ChainTransaction $Transaction 链上交易信息
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -54,9 +62,13 @@ class GetCredentialStatusResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("CredentialStatus",$param) and $param["CredentialStatus"] !== null) {
-            $this->CredentialStatus = new CredentialStatus();
-            $this->CredentialStatus->deserialize($param["CredentialStatus"]);
+        if (array_key_exists("Did",$param) and $param["Did"] !== null) {
+            $this->Did = $param["Did"];
+        }
+
+        if (array_key_exists("Transaction",$param) and $param["Transaction"] !== null) {
+            $this->Transaction = new ChainTransaction();
+            $this->Transaction->deserialize($param["Transaction"]);
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

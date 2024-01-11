@@ -18,20 +18,28 @@ namespace TencentCloud\Tdid\V20210519\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * VerifyCredential请求参数结构体
+ * GetCredentialState请求参数结构体
  *
- * @method VerifyFunctionArg getFunctionArg() 获取参数集合
- * @method void setFunctionArg(VerifyFunctionArg $FunctionArg) 设置参数集合
+ * @method string getCredentialId() 获取凭证唯一Id
+ * @method void setCredentialId(string $CredentialId) 设置凭证唯一Id
+ * @method integer getDAPId() 获取用户应用Id
+ * @method void setDAPId(integer $DAPId) 设置用户应用Id
  */
-class VerifyCredentialRequest extends AbstractModel
+class GetCredentialStateRequest extends AbstractModel
 {
     /**
-     * @var VerifyFunctionArg 参数集合
+     * @var string 凭证唯一Id
      */
-    public $FunctionArg;
+    public $CredentialId;
 
     /**
-     * @param VerifyFunctionArg $FunctionArg 参数集合
+     * @var integer 用户应用Id
+     */
+    public $DAPId;
+
+    /**
+     * @param string $CredentialId 凭证唯一Id
+     * @param integer $DAPId 用户应用Id
      */
     function __construct()
     {
@@ -46,9 +54,12 @@ class VerifyCredentialRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("FunctionArg",$param) and $param["FunctionArg"] !== null) {
-            $this->FunctionArg = new VerifyFunctionArg();
-            $this->FunctionArg->deserialize($param["FunctionArg"]);
+        if (array_key_exists("CredentialId",$param) and $param["CredentialId"] !== null) {
+            $this->CredentialId = $param["CredentialId"];
+        }
+
+        if (array_key_exists("DAPId",$param) and $param["DAPId"] !== null) {
+            $this->DAPId = $param["DAPId"];
         }
     }
 }

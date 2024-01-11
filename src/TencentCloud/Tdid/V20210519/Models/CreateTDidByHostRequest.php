@@ -18,28 +18,28 @@ namespace TencentCloud\Tdid\V20210519\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateSelectiveCredential请求参数结构体
+ * CreateTDidByHost请求参数结构体
  *
- * @method VerifyFunctionArg getFunctionArg() 获取参数集合
- * @method void setFunctionArg(VerifyFunctionArg $FunctionArg) 设置参数集合
- * @method integer getPolicyId() 获取批露策略id
- * @method void setPolicyId(integer $PolicyId) 设置批露策略id
+ * @method integer getDAPId() 获取DID应用ID
+ * @method void setDAPId(integer $DAPId) 设置DID应用ID
+ * @method string getCustomAttribute() 获取自定义DID文档json属性
+ * @method void setCustomAttribute(string $CustomAttribute) 设置自定义DID文档json属性
  */
-class CreateSelectiveCredentialRequest extends AbstractModel
+class CreateTDidByHostRequest extends AbstractModel
 {
     /**
-     * @var VerifyFunctionArg 参数集合
+     * @var integer DID应用ID
      */
-    public $FunctionArg;
+    public $DAPId;
 
     /**
-     * @var integer 批露策略id
+     * @var string 自定义DID文档json属性
      */
-    public $PolicyId;
+    public $CustomAttribute;
 
     /**
-     * @param VerifyFunctionArg $FunctionArg 参数集合
-     * @param integer $PolicyId 批露策略id
+     * @param integer $DAPId DID应用ID
+     * @param string $CustomAttribute 自定义DID文档json属性
      */
     function __construct()
     {
@@ -54,13 +54,12 @@ class CreateSelectiveCredentialRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("FunctionArg",$param) and $param["FunctionArg"] !== null) {
-            $this->FunctionArg = new VerifyFunctionArg();
-            $this->FunctionArg->deserialize($param["FunctionArg"]);
+        if (array_key_exists("DAPId",$param) and $param["DAPId"] !== null) {
+            $this->DAPId = $param["DAPId"];
         }
 
-        if (array_key_exists("PolicyId",$param) and $param["PolicyId"] !== null) {
-            $this->PolicyId = $param["PolicyId"];
+        if (array_key_exists("CustomAttribute",$param) and $param["CustomAttribute"] !== null) {
+            $this->CustomAttribute = $param["CustomAttribute"];
         }
     }
 }
