@@ -18,16 +18,28 @@ namespace TencentCloud\Tdid\V20210519\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CheckNewPurchase请求参数结构体
+ * did自定义属性
  *
-
+ * @method string getKey() 获取键名
+ * @method void setKey(string $Key) 设置键名
+ * @method string getVal() 获取键值
+ * @method void setVal(string $Val) 设置键值
  */
-class CheckNewPurchaseRequest extends AbstractModel
+class DidAttribute extends AbstractModel
 {
-
+    /**
+     * @var string 键名
+     */
+    public $Key;
 
     /**
+     * @var string 键值
+     */
+    public $Val;
 
+    /**
+     * @param string $Key 键名
+     * @param string $Val 键值
      */
     function __construct()
     {
@@ -42,6 +54,12 @@ class CheckNewPurchaseRequest extends AbstractModel
         if ($param === null) {
             return;
         }
+        if (array_key_exists("Key",$param) and $param["Key"] !== null) {
+            $this->Key = $param["Key"];
+        }
 
+        if (array_key_exists("Val",$param) and $param["Val"] !== null) {
+            $this->Val = $param["Val"];
+        }
     }
 }
